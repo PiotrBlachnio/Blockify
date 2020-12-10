@@ -37,7 +37,18 @@ class SpotifyClient:
         self.client_id = client_id
         self.client_secret = client_secret
 
+    def get_client_credentials_base64(self):
+        client_credentials = f"{self.client_id}:{self.client_secret}"
+        client_credentials_base64 = base64.b64encode(client_credentials.encode())
 
+        return client_credentials_base64.decode()
+
+    def get_token_headers(self):
+        client_credentials_base64 = self.get_client_credentials_base64()
+
+        return {
+            "Authorization": f"Basic {client_credentials_base64}"
+        }
 
 
 # path = "C:\\Users\\Piotr Błachnio\\Desktop\\Spotify"
