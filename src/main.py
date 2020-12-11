@@ -3,11 +3,9 @@ import os
 import time
 import win32gui
 import win32con
-from dotenv import load_dotenv
-load_dotenv()
 
-path = "C:\\Users\\Piotr Błachnio\\Desktop\\Spotify"
-
+file = open('path.txt', 'r', encoding='utf-8')
+path = file.read()
 def close_application():
     os.system("TASKKILL /F /IM Spotify.exe")
 
@@ -22,3 +20,4 @@ if __name__ == "__main__":
     keyboard.press_and_release("space")
     window = win32gui.GetForegroundWindow()
     win32gui.ShowWindow(window, win32con.SW_MINIMIZE)
+
