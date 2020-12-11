@@ -9,6 +9,7 @@ class Blockify:
 
     def __init__(self):
         self.read_path()
+        self.start()
 
     def read_path(self):
         file = open('path.txt', 'r', encoding='utf-8')
@@ -39,9 +40,9 @@ class Blockify:
 
     def start(self):
         self.restart_application()
-        self.wait(2)
+        self.wait(2.3)
 
         self.resume_playback()
         self.minimize_window()
         
-Blockify().start()
+Blockify()
