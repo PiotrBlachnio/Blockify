@@ -40,7 +40,7 @@ class Blockify:
 
     def start(self):
         self.restart_application()
-        self.wait(2.3)
+        self.wait(3)
 
         self.resume_playback()
         self.minimize_window()
